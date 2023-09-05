@@ -20,11 +20,6 @@ main {
   padding: 20px;
 }
 
-.header--image {
-  height: 100%;
-  margin-right: 6px;
-}
-
 .header--title {
   font-size: 1.25rem;
   margin-right: auto;
@@ -57,6 +52,12 @@ main {
   color: white;
   border: none;
   cursor: pointer;
+}
+
+@media (max-width: 400px) {
+  .form--input, .form--button{
+    width: 98%;
+  }
 }
 
 .meme {
