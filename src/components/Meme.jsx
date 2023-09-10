@@ -1,4 +1,5 @@
 import React from "react";
+import axios from "axios";
 
 export default function Meme() {
   // regular state for the page
@@ -13,9 +14,8 @@ export default function Meme() {
   // this useEffect call api and place it into allMemes state
   React.useEffect(() => {
     async function getMemes() {
-      const res = await fetch("https://api.imgflip.com/get_memes");
-      const data = await res.json();
-      setAllMemes(data.data.memes);
+      const res = await axios.get("https://api.imgflip.com/get_memes");
+      setAllMemes(res.data.data.memes);
     }
     getMemes();
   }, []);
